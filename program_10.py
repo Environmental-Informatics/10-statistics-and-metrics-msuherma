@@ -306,36 +306,36 @@ if __name__ == '__main__':
 # In[25]:
 
 
-#------------------ Output Files --------------------# 
-# Annual and Monthly Metrics csv output
-Ann_WY = pd.concat([WYDataDF['Wildcat'],WYDataDF['Tippe']])
-    ## Annual Wildcat 
-Ann_WY.loc[(Ann_WY.site_no == 3335000),'Station'] = 'Wildcat'
-    ## Annual Tippecanoe
-Ann_WY.loc[(Ann_WY.site_no == 3331500),'Station'] = 'Tippecanoe'
-Ann_WY.to_csv('Annual_Metrics.csv', sep=',',index=True)
-
-# Monthly
-Mo_WY = pd.concat([MoDataDF['Wildcat'],MoDataDF['Tippe']])
-    ## Monthly Wildcat
-Mo_WY.loc[(Mo_WY.site_no == 3335000),'Station'] = 'Wildcat'
-    ## Monthly Tippecanoe
-Mo_WY.loc[(Mo_WY.site_no == 3331500),'Station'] = 'Tippecanoe'
-Mo_WY.to_csv('Monthly_Metrics.csv', sep=',',index=True)
-
-# Annual and monthly Average Metrics csv output
-    ## Wildcat and Tippecanoe Average Annual
-## Annual Average
-Mean_Ann = pd.concat([pd.Series('Tippecanoe',index=['Station']).append(AnnualAverages['Tippe']),pd.Series('Wildcat',index=['Station']).append(AnnualAverages['Wildcat'])])
-Mean_Ann.to_csv('Average_Annual_Metrics.txt', sep='\t',index=True)
-## Month Average
-Mean_Mo = pd.concat([MonthlyAverages['Tippe'],MonthlyAverages['Wildcat']])
-Mean_Mo.loc[(Mean_Mo.site_no == 3335000),'Station'] = 'Wildcat'
-Mean_Mo.loc[(Mean_Mo.site_no == 3331500),'Station'] = 'Tippecanoe'
-Mean_Mo.to_csv('Average_Monthly_Metrics.txt', sep='\t',index=True)
-
-
-
+    #------------------ Output Files --------------------# 
+    # Annual and Monthly Metrics csv output
+    Ann_WY = pd.concat([WYDataDF['Wildcat'],WYDataDF['Tippe']])
+        ## Annual Wildcat 
+    Ann_WY.loc[(Ann_WY.site_no == 3335000),'Station'] = 'Wildcat'
+        ## Annual Tippecanoe
+    Ann_WY.loc[(Ann_WY.site_no == 3331500),'Station'] = 'Tippecanoe'
+    Ann_WY.to_csv('Annual_Metrics.csv', sep=',',index=True)
+    
+    # Monthly
+    Mo_WY = pd.concat([MoDataDF['Wildcat'],MoDataDF['Tippe']])
+        ## Monthly Wildcat
+    Mo_WY.loc[(Mo_WY.site_no == 3335000),'Station'] = 'Wildcat'
+        ## Monthly Tippecanoe
+    Mo_WY.loc[(Mo_WY.site_no == 3331500),'Station'] = 'Tippecanoe'
+    Mo_WY.to_csv('Monthly_Metrics.csv', sep=',',index=True)
+    
+    # Annual and monthly Average Metrics csv output
+        ## Wildcat and Tippecanoe Average Annual
+    ## Annual Average
+    Mean_Ann = pd.concat([pd.Series('Tippecanoe',index=['Station']).append(AnnualAverages['Tippe']),pd.Series('Wildcat',index=['Station']).append(AnnualAverages['Wildcat'])])
+    Mean_Ann.to_csv('Average_Annual_Metrics.txt', sep='\t',index=True)
+    ## Month Average
+    Mean_Mo = pd.concat([MonthlyAverages['Tippe'],MonthlyAverages['Wildcat']])
+    Mean_Mo.loc[(Mean_Mo.site_no == 3335000),'Station'] = 'Wildcat'
+    Mean_Mo.loc[(Mean_Mo.site_no == 3331500),'Station'] = 'Tippecanoe'
+    Mean_Mo.to_csv('Average_Monthly_Metrics.txt', sep='\t',index=True)
+    
+    
+    
 
 
 
